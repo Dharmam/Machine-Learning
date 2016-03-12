@@ -1,0 +1,26 @@
+dataDirectory <- "C:/Users/Dharmam/Desktop/capital one/check.csv"
+data <- read.csv(dataDirectory, sep="," , header = TRUE)
+
+nzv <- nearZeroVar(data,saveMetrics = TRUE)
+
+print(paste('Range :',  range(nzv$percentUnique)))
+
+head(nzv)
+
+// This deletes the columns with very low variance.
+
+head(nzv[nzv$percentUnique <  0.5,])
+
+      freqRatio percentUnique zeroVar   nzv
+f_61   1.033605          0.12   FALSE FALSE
+f_121  1.008434          0.14   FALSE FALSE
+f_215  1.057190          0.10   FALSE FALSE
+f_237  1.016364          0.08   FALSE FALSE
+
+nComp <- 1  
+dfComponents <- predict(princ, newdata=pmatrix)[,1:nComp]
+
+dfEvaluate <- cbind(as.data.frame(dfComponents),
+              cluster=g_labels$V1)
+
+EvaluateAUC(dfEvaluate)
