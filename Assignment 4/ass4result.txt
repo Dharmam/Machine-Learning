@@ -1,0 +1,7 @@
+
+       SVM_PRECISION           SVM_RECALL           SVM_FSCORE LOGITBOOST_PRECISION    LOGITBOOST_RECALL    LOGITBOOST_FSCORE 
+               0.900                0.882                0.890                0.846                0.804                0.812 
+    GLMNET_PRECISION        GLMNET_RECALL        GLMNET_FSCORE       TREE_PRECISION          TREE_RECALL          TREE_FSCORE 
+               0.872                0.820                0.836                0.624                0.634                0.606 
+MAXENTROPY_PRECISION    MAXENTROPY_RECALL    MAXENTROPY_FSCORE 
+               0.916                0.904                0.908 

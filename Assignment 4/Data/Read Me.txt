@@ -1,0 +1,11 @@
+1. Extract the files at any convinient folder.
+2. Copy the folder location.
+3. Replace the copied address in the setwd() command in the code.
+4. Run the code and compare the results.
+5. All the data used, model used and data result analysis has been noted in the project report - DSB150030_Assignment_4.docx.
+
+Please, revert for any more clarifications or questions.
+
+Thanks and regards,
+Dharmam Buch
+DSB150030

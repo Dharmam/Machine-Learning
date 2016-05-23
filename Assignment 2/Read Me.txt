@@ -1,0 +1,46 @@
+Create a temporary folder C:\mywork.  
+
+Save my java files DecisionTreeAlgorithm, Attribute, AttributeDO, AttributeValue , DecisionNode, Instance, InstanceIndexer Instances, Node, Utility and MLException in it.
+
+Run Command Prompt and Type
+C:\> cd \mywork
+This makes C:\mywork the current directory.
+
+C:\mywork> dir
+This displays the directory contents.  You should see my files among the files.
+
+C:\mywork> set path=%path%;C:\Program Files\Java\jdk1.7.0_79\bin
+(use the JDK folder for the version installed on your system).  This tells the system where to find JDK programs.
+
+C:\mywork> javac DecisionTreeAlgorithm.java
+This runs javac.exe, the compiler.  You should see nothing but the next system prompt...
+
+C:\mywork> dir
+javac has created the .class  files for all the files above.  You should see these among the files.
+
+(I am including my .class files made with the above mentioned jdk version.)
+
+C:\mywork>java DecisionTreeAlgorithm 4 5 "C:/Users/Dharmam/git/machine-learning/ml.playground/src/main/resources/data_sets_1/training_set.csv" "C:/Users/Dharmam/git/machine-learning/ml.playground/src/main/resources/data_sets_1/validation_set.csv" "C:/Users/Dharmam/git/machine-learning/ml.playground/src/main/resources/data_sets_1/test_set.csv" "yes" "yes"
+
+this will execute the programm.
+
+You will See the tree.
+
+Parameters : - 
+
+a) L value
+ - Number of times you want to run "pruning" algorithm.
+b) K value
+ - Number of nodes to be "pruned".
+c) <training-set> location (./data_sets1/training_set.csv)
+ 
+d) <validation-set> location (./data_sets1/validation_set.csv)
+ 
+e) <test-set> location (./data_sets1/test_set.csv)
+ 
+f) <to-print> (yes | no)
+
+
+g) <isRandom> (yes | no) -- THIS IS FOR THE BONUS PART.
+
+

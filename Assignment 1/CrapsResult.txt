@@ -1,0 +1,12 @@
+games_no result bet_amount net_bal
+1         win     100      1100
+2         win     100      1200
+3         win     100      1300
+4         loose    100      1100
+5         loose    200      700
+6         win     400      800
+7         win     100      900
+8         win     100      1000
+9         win     100      1100
+
+I dont think this system works, as everytime you run this function the system will result in a different answer. Thus, there wouldnt be a fixed model to make a machine learning for this syste,

@@ -1,0 +1,32 @@
+library('RTextTools')
+setwd(".")
+
+print(1)
+rtrain<-read_data("C:/Users/Dharmam/Desktop/Machine Learning/Assignment 4/Data/Train_Data",type = "folder",
+             index = "C:/Users/Dharmam/Desktop/Machine Learning/Assignment 4/Data/Train_Labels.csv")
+print(2)
+doc_matrix_train <- create_matrix(rtrain$Text.Data, language="english", removeNumbers=TRUE, stemWords=TRUE, removeSparseTerms=.998)
+container_train <- create_container(doc_matrix_train, rtrain$Labels,trainSize = 1:480, virgin=FALSE)
+
+
+print(3)
+rtest<-read_data("C:/Users/Dharmam/Desktop/Machine Learning/Assignment 4/Data/Test_Data",type = "folder",
+                  index = "C:/Users/Dharmam/Desktop/Machine Learning/Assignment 4/Data/Test_Labels.csv")
+print(4)
+doc_matrix_test <- create_matrix(rtrain$Text.Data, language="english", removeNumbers=TRUE, stemWords=TRUE, removeSparseTerms=.998)
+container_test <- create_container(doc_matrix_test, rtest$Labels, testSize = 1:58, virgin=FALSE)
+
+
+print(5)
+SVM <- train_model(container_train,"SVM")
+GLMNET <- train_model(container_train,"GLMNET")
+MAXENT <- train_model(container_train,"MAXENT")
+TREE <- train_model(container_train,"TREE")
+print(6)
+SVM_CLASSIFY <- classify_model(container_test, SVM)
+GLMNET_CLASSIFY <- classify_model(container_test, GLMNET)
+MAXENT_CLASSIFY <- classify_model(container_test, MAXENT)
+TREE_CLASSIFY <- classify_model(container_test, TREE)
+
+analytics <- create_analytics(container_test,MAXENT_CLASSIFY, cbind(SVM_CLASSIFY,  GLMNET_CLASSIFY, TREE_CLASSIFY))
+print(analytics)
